@@ -2,6 +2,7 @@
 .dart_tool/
 .packages
 .pub/
+.idea/
 
 # committing build for this one - need it for .io
 # build/

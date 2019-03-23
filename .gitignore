@@ -7,9 +7,9 @@
 # committing build for this one - need it for .io
 # build/
 # I think thest are unnecessary, though
-build/.packages
-build/packages
-build/.build.manifest
+docs/.packages
+docs/packages
+docs/.build.manifest
 
 # Remove the following pattern if you wish to check in your lock file
 pubspec.lock

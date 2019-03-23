@@ -207,7 +207,7 @@ h3 {
 
 .textIcon {
     position:relative;
-    width:100%;
+    width:50px;
     font-family:"dice";
     margin-bottom:3px;
     cursor:default;

@@ -1,0 +1,326 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family: "dice";
+    src: url("dice.otf") format("opentype");
+}
+@font-face {
+    font-family: "swbody";
+    src: url("itc-symbol-lt-book.ttf") format("truetype");
+}
+@font-face {
+    font-family: "swnumber";
+    src: url("TeutonMager.otf") format("opentype");
+}
+@font-face {
+    font-family: "swtitle";
+    src: url("Elektra Text Pro Bold.otf") format("opentype");
+}
+
+
+html, body {
+  /*width: 100%;
+  height: 100%;*/
+  margin: 0;
+  padding: 0;
+  font-family: 'swbody', sans-serif;
+  box-sizing:border-box;
+  background-color:#F5F5F0
+}
+
+input, select {
+    font-family: 'swbody', sans-serif;
+    font-size:14px;
+}
+
+#output {
+  padding: 20px;
+  text-align: center;
+}
+
+table.diceTable {
+    border:1px solid black;
+    border-collapse:collapse;
+}
+
+table.diceTable th {
+    background-color: #EEEEEE;
+}
+
+table.diceTable th.rowHead {
+    width:70px;
+}
+
+table.diceTable th.columnHead {
+    height:60px;
+}
+
+#pool {
+    margin-bottom:20px;
+}
+
+#reset {
+    margin-top:15px;
+}
+#reset:active {
+    margin-top:17px;
+}
+
+div.dicePool {
+    display:flex;
+    /*border:1px solid red;*/
+    margin:2px;
+}
+
+table.diceTable th.rowHead div.dicePool {
+    justify-content:flex-end;
+    width:90px;
+    height:18px;
+}
+
+table.diceTable th.columnHead div.dicePool {
+    justify-content:flex-end;
+    flex-direction:column;
+    width:18px;
+    height:90px;
+    margin:0 auto 0 auto;
+}
+
+table.diceTable th.columnHead div.dicePool div {
+    transform-origin: center center;
+    transform: rotate(90deg);
+}
+
+table.diceTable th, table.diceTable td {
+    border: 1px solid black;
+    width:35px;
+    height:25px;
+    font-size:11px;
+}
+
+table.diceTable td {
+    text-align:center;
+}
+
+table.diceTable .rowBreak {
+    border-bottom-width: 2px;
+}
+
+table.diceTable .columnBreak {
+    border-right-width: 2px;
+}
+
+div.dicePool div {
+    width:18px;
+    height:18px;
+    display: inline-block;
+    margin:0px;
+}
+
+/*Conditions and UI*/
+
+h1,h2,h3 {
+    font-family: "swtitle";
+    text-transform:uppercase;
+}
+
+h1 {
+    margin: 10px 5px 10px 5px;
+    text-align:center;
+    font-size:30px;
+    color:#801010;
+}
+h2 {
+    margin: 5px 2px 5px 2px;
+    font-size:20px;
+    color:#806010;
+}
+h3 {
+    margin: 5px 2px 5px 2px;
+    font-size:14px;
+}
+
+.rollContent {
+    width:650px;
+    margin:5px auto 5px auto;
+    border: 1px solid black;
+    padding: 10px 2px 10px 2px;
+    text-align:center;
+    box-shadow:0 5px 5px rgba(0.2,0,0,0.1), 0 8px 8px rgba(0.2,0,0,0.1);
+    background-color:#FFFFFA
+}
+
+.condition {
+    position:relative;
+    padding: 5px 0px 5px 0px;
+    margin: 2px 0px 2px 3px;
+    border-bottom: 1px solid #CCCCC0;
+}
+
+.condition:first-child {
+    border-top: 1px solid #CCCCC0;
+}
+
+.conditionContainer {
+    border-left: 2px solid black;
+    padding-left:6px;
+}
+
+.addButton, .removeButton {
+    width:20px;
+    height:20px;
+    border: 1px solid black;
+    cursor:pointer;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.addButton {
+
+}
+
+.removeButton {
+    position:absolute;
+    right:3px;
+    top:3px;
+}
+
+.poolCategory {
+
+}
+
+.poolItem {
+    display:inline-block;
+    padding:6px;
+    text-align:center;
+    border-left:1px solid #CCCCC0;
+}
+
+.poolItem:first-child {
+    border-left:0px none transparent;
+}
+
+.poolItem input[type=number] {
+    width:48px;
+    display:block;
+}
+
+.textIcon {
+    position:relative;
+    width:100%;
+    font-family:"dice";
+    margin-bottom:3px;
+    cursor:default;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#criteria {
+    text-align:left;
+}
+
+.conditionSelector {
+    margin-top:4px;
+}
+
+.conditionSelector * {
+    height:22px;
+    display:inline-block;
+    box-sizing:border-box;
+}
+
+.conditionSelectorSymbol {
+
+}
+.conditionSelectorComparison {
+    margin-left:4px;
+}
+.conditionSelectorNumber {
+    margin-left:4px;
+    width:65px;
+    padding-left:3px;
+}
+
+/* RESULTS */
+#resultBox {
+    margin: 16px 0 16px 0;
+    position:relative;
+    padding:0 5% 0 5%;
+}
+
+#resultBoxLeft, #resultBoxRight {
+    position:relative;
+    display:inline-block;
+    width:50%;
+    height:100%;
+    box-sizing: border-box;
+    text-align:center;
+    /*font-family: "swnumber";*/
+}
+
+#resultBoxLeft {
+    left: 0px;
+}
+
+#resultBoxRight {
+    float:right;
+    right: 0px;
+    font-style:italic;
+}
+
+#resultPercentage {
+    font-size:64px;
+    font-weight:bold;
+}
+
+#resultChance {
+    color: #D0C8C0;
+}
+
+#resultRatio {
+    font-weight:bold;
+    font-style:normal;
+    font-size:42px;
+    margin-top:3px;
+}
+
+#resultNumerator {
+
+}
+
+#resultDenominator {
+
+}
+
+#resultApprox {
+    display:block;
+    height:16px;
+}
+
+button {
+    padding:5px 20px 5px 20px;
+    margin:3px;
+    height:45px;
+    background:#FFFFFF;
+    border: 1px solid black;
+    cursor:pointer;
+    box-sizing:border-box;
+    box-shadow: 0 -2px 0 0 #AAAAAA inset;
+
+    font-family: 'swbody', sans-serif;
+    font-size: 15px;
+    font-weight:bold;
+}
+
+button:hover {
+
+}
+
+button:active {
+    box-shadow: none;
+    padding-bottom:3px;
+    margin-top:5px;
+    height:43px;
+}

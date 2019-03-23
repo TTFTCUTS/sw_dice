@@ -1,0 +1,17 @@
+# Files and directories created by pub
+.dart_tool/
+.packages
+.pub/
+
+# committing build for this one - need it for .io
+# build/
+# I think thest are unnecessary, though
+build/.packages
+build/packages
+build/.build.manifest
+
+# Remove the following pattern if you wish to check in your lock file
+pubspec.lock
+
+# Directory created by dartdoc
+doc/api/

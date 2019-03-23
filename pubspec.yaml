@@ -1,0 +1,21 @@
+name: sw_dice
+description: Dice pool probability calculator for FFG's Star Wars RPG and Genesys
+version: 1.0.0
+homepage: https://github.com/TTFTCUTS/sw_dice
+author: TTFTCUTS
+
+environment:
+  sdk: '>=2.2.0 <3.0.0'
+
+dependencies:
+  CommonLib:
+    git: git://github.com/FarragoFiction/CommonLib.git
+
+dev_dependencies:
+  build_runner: ^1.0.0
+  build_test: ^0.10.2
+  build_web_compilers: ^0.4.0
+
+web:
+  compiler:
+    debug: dartdevc

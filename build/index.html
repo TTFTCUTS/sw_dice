@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>genesys_dice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart.js" type="application/javascript"></script>
+</head>
+
+<body>
+    <h1>Pool Result Probability Calculator</h1>
+    <div class="rollContent">
+        <h2>Pool</h2>
+        <div id="pool"></div>
+        <!--<button id="rollButton">Roll!</button>-->
+        <h2>Conditions</h2>
+        <div id="criteria"></div>
+        <div id="resultBox">
+            <div id="resultBoxLeft">
+                <div id="resultPercentage">0%</div>
+                <div id="resultChance">0.0</div>
+            </div>
+            <div id="resultBoxRight">
+                <span id="resultApprox"></span>
+                <div id="resultRatio"><span id="resultNumerator">0</span> in <span id="resultDenominator">1</span></div>
+            </div>
+        </div>
+        <button id="chanceButton">Calculate Probability</button>
+    </div>
+
+    <div id="table"></div>
+
+</body>
+</html>

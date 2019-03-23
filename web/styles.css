@@ -225,7 +225,7 @@ h3 {
     margin-top:4px;
 }
 
-.conditionSelector * {
+.conditionSelector input {
     height:22px;
     display:inline-block;
     box-sizing:border-box;
